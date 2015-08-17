@@ -2,7 +2,6 @@ import './suggestion.js'; // make sure we load suggestions too
 import log from './logger.js'; // decorator
 
 class FilteringSearchBar extends HTMLElement {
-  @log
   createdCallback () {
     this.input = document.createElement('input');
     this.list = document.createElement('ul');
@@ -13,7 +12,6 @@ class FilteringSearchBar extends HTMLElement {
     });
   }
 
-  @log
   attachedCallback () {
     // called whenever an element is added to the DOM
     this.input.addEventListener('keypress', this.handleInput.bind(this));
@@ -22,7 +20,6 @@ class FilteringSearchBar extends HTMLElement {
     //this.input.addEventListener('blur', this.handleBlur.bind(this));
   }
 
-  @log
   detachedCallback () {
     // called whenever an element is removed from the DOM
     this.input.removeEventListener('keypress', this.handleInput.bind(this));
@@ -31,7 +28,6 @@ class FilteringSearchBar extends HTMLElement {
     //this.input.addEventListener('blur', this.handleBlur.bind(this));
   }
 
-  @log
   attributeChangedCallback(attribute, oldValue, newValue) {
     // called whenever an attribute changes on an element
     console.log(attribute, oldValue, newValue);
