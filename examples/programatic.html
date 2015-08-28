@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1>My Item</h1>
+    <div id="container"></div>
     <script src="../dist/item-rating.js"></script>
     <script>
       // create a new item rating element, the `new` keyword is optional
@@ -17,6 +18,8 @@
       itemRating.addEventListener('rateitem', function (e) {
         console.log('Rate Item:', e.detail.rating);
       });
+      document.getElementById("container").appendChild(itemRating); 
     </script>
+    
   </body>
 </html>
